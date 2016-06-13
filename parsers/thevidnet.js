@@ -9,11 +9,9 @@ module.exports = (data) =>{
         SkipExternalResources: false
       },
       done:function(err, window){
-        if(err || !window.vurl2){
-          reject(false);
-        }else{
-          resolve({url:window.vurl2});
-        }
+        if(err || !window.vurl2)
+          return reject(false);
+        resolve({url:window.vurl2});
         window.close();
       }
     });
