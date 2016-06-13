@@ -5,7 +5,7 @@ require("express")()
 }))
 .post('/', function(req, res, next) {
   try{
-    require('./parsers/'+req.body.target)(req.body.data).then(res.send);
+    require('./parsers/'+req.body.target)(req.body.data).then((url)=>res.send(url));
   }catch(e){
     res.send(e);
   }
