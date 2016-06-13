@@ -1,0 +1,12 @@
+{
+  "name": "pltv-extractor",
+  "version": "1.0.0",
+  "description": "PlaylisTV Stream Extractor",
+  "main": "index.js",
+  "author": "Miguel Targa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4"
+  }
+}
