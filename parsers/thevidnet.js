@@ -2,18 +2,15 @@
 module.exports = (data) =>{
   return new Promise((resolve, reject) => {
     require('jsdom').env({
-      html: data,
+      html: require('fs').readFileSync('./thevidnet.txt'),
       features: {
-        FetchExternalResources: ["script"],
-        ProcessExternalResources: ["script"],
+        FetchExternalResources: ['script'],
+        ProcessExternalResources: ['script'],
         SkipExternalResources: false
       },
       done:function(err, window){
-        if(err || !window.vurl2){
-          reject(false);
-        }else{
-          resolve({url:window.vurl2});
-        }
+        if(err || !window.vurl2) return reject({});
+        resolve({url:window.vurl2});
         window.close();
       }
     });
